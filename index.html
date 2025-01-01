@@ -6,56 +6,126 @@
     <link rel="icon" type="image/png" href="img/icone.png"/>
     <title>Desafio CSS</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body{
+            background-color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        .content{
+            display: grid;
+            grid-template-columns: 1fr;
+            font-family: sans-serif;
+        }
+        .content > header{
+            padding: 10px;
+            justify-items: center;
+            font-size: 38px;
+            font-family: cursive;
+            box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+            
+        }
+        .content > section {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            gap: 10px;
+            height: calc(100vh - 100px);
         }
-        header{
-            grid-column: span 2;
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fbbf24;
+            padding: 10px;
+            height: 100%; /* Ocupa todo o espaço vertical disponível */
         }
         img{
-            justify-content: stretch;
+            width: 100%;
+            border-radius: 15px;
         }
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+            align-content: center;
+        }
+        ul{
+            padding: 20px;
+        }
+        /* 768px //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+        @media (max-width: 800px) {
+            .content section{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .img{
+                padding: 0;
+            }
+            img{
+                width: 70%;
+            }
+            header h1{
+                font-size: 32px;
+            }
+        }
+        /* 480px //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+        @media (max-width: 480px) {
+            main {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            img{
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Receita de Cookie</h1>
-    </header>
-    <!-- <section> -->
-        <img src="img/ilustrativo.jpg" alt="Ilustração de cookies deliciosos">
-        <main>
-            <div>
-                <h2>Ingredientes</h2>
-                <ul>
-                    <li>2 1/4 xícaras (280g) de farinha de trigo</li>
-                    <li>1/2 colher de chá de bicarbonato de sódio</li>
-                    <li>1 xícara (220g) de manteiga sem sal, derretida e resfriada</li>
-                    <li>1 xícara (200g) de açúcar mascavo</li>
-                    <li>1/2 xícara (100g) de açúcar refinado</li>
-                    <li>1 colher de chá de extrato de baunilha</li>
-                    <li>1 ovo grande</li>
-                    <li>1 gema de ovo</li>
-                    <li>2 xícaras (340g) de gotas de chocolate</li>
-                    <li>1 pitada de sal</li>
-                </ul>
+    <section class="content">
+        <header>
+            <h1>Receita de Cookie</h1>
+        </header>
+        <section>
+            <div class="img">
+                <img src="img/ilustrativo1.jpg" alt="Ilustração de cookies deliciosos">
             </div>
-            <div>
-                <h2>Passos</h2>
-                <ul>
-                    <li>Preaqueça o forno a 180°C e forre uma assadeira com papel manteiga.</li>
-                    <li>Em uma tigela, misture a farinha, o bicarbonato de sódio e o sal. Reserve.</li>
-                    <li>Em outra tigela, bata a manteiga derretida com o açúcar mascavo e o açúcar refinado até obter uma mistura homogênea.</li>
-                    <li>Adicione o ovo, a gema e o extrato de baunilha à mistura de manteiga e açúcar. Bata bem.</li>
-                    <li>Incorpore gradualmente os ingredientes secos, misturando apenas até combinar.</li>
-                    <li>Adicione as gotas de chocolate e misture levemente.</li>
-                    <li>Forme bolas com a massa usando uma colher ou as mãos e coloque na assadeira, deixando espaço entre os cookies.</li>
-                    <li>Asse por 10-12 minutos ou até as bordas ficarem levemente douradas.</li>
-                    <li>Retire do forno e deixe os cookies esfriarem na assadeira por 5 minutos antes de transferi-los para uma grade para esfriar completamente.</li>
-                </ul>
-            </div>
-        </main>
-    <!-- </section> -->
-</body>
-
-</html>
+            <main>
+                <section>
+                    <h2>Ingredientes</h2>
+                    <ul>
+                        <li>2 1/4 xícaras (280g) de farinha de trigo</li>
+                        <li>1/2 colher de chá de bicarbonato de sódio</li>
+                        <li>1 xícara (220g) de manteiga sem sal, derretida e resfriada</li>
+                        <li>1 xícara (200g) de açúcar mascavo</li>
+                        <li>1/2 xícara (100g) de açúcar refinado</li>
+                        <li>1 colher de chá de extrato de baunilha</li>
+                        <li>1 ovo grande</li>
+                        <li>1 gema de ovo</li>
+                        <li>2 xícaras (340g) de gotas de chocolate</li>
+                        <li>1 pitada de sal</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Passos</h2>
+                    <ul>
+                        <li>Preaqueça o forno a 180°C e prepare uma assadeira com papel manteiga.</li>
+                        <li>Misture os ingredientes secos em uma tigela.</li>
+                        <li>Bata a manteiga, os açúcares, os ovos e a baunilha em outra tigela.</li>
+                        <li>Combine as misturas e adicione as gotas de chocolate.</li>
+                        <li>Forme bolas, coloque na assadeira e asse por 10-12 minutos.</li>
+                        <li>Deixe esfriar antes de servir.</li>
+                    </ul>
+                </section>
+            </main>
+        </section>
+    </section>
+    </body>
+    
+    </html>

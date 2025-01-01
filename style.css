@@ -1,0 +1,8 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: azure;
+    font-size: 0.9rem;
+    gap: 15px;
+    font-family: sans-serif;
+}
